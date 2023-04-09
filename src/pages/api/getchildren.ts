@@ -1,33 +1,14 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-
-enum DEPARTMENT {
-  "IT",
-  "HR",
-  "SALES",
-  "MARKETING",
-  "FINANCE",
-  "ADMIN",
-}
-
-type Person = {
-  id: number;
-  name: string;
-  parent: number;
-  children: number[];
-  nodeHeight: number;
-  manager: boolean;
-  department?: DEPARTMENT;
-  developer: boolean;
-  //TODO: Change to relationship with programming language table
-  programmingLanguage?: string;
-};
+import { Person } from "../types/person";
+import { DEPARTMENT } from "../types/enums";
 
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Person[]>
 ) {
   res.status(200).json([
+    //TODO: Retrieve from DB
     {
       id: 2,
       name: "Kara Thrace",
@@ -35,7 +16,7 @@ export default function handler(
       children: [6, 4],
       nodeHeight: 1,
       manager: true,
-      department: DEPARTMENT.IT,
+      departmentEnum: DEPARTMENT.IT,
       developer: true,
       programmingLanguage: "TypeScript",
     },
@@ -46,7 +27,7 @@ export default function handler(
       children: [],
       nodeHeight: 1,
       manager: true,
-      department: DEPARTMENT.SALES,
+      departmentEnum: DEPARTMENT.SALES,
       developer: false,
     },
   ]);
