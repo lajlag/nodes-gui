@@ -1,0 +1,100 @@
+[
+  {
+    "id": 1,
+    "name": "Zima Blue",
+    "parent": null,
+    "children": [
+      {
+        "id": 2
+      },
+      {
+        "id": 3
+      }
+    ],
+    "nodeHeight": 0,
+    "manager": false,
+    "departmentEnum": null,
+    "developer": false,
+    "programmingLanguage": null
+  },
+  {
+    "id": 2,
+    "name": "James Holden",
+    "parent": 1,
+    "children": [
+      {
+        "id": 4
+      },
+      {
+        "id": 5
+      },
+      {
+        "id": 6
+      }
+    ],
+    "nodeHeight": 1,
+    "manager": true,
+    "departmentEnum": "DEPARTMENT.IT",
+    "developer": true,
+    "programmingLanguage": "TypeScript"
+  },
+  {
+    "id": 3,
+    "name": "Josephus Miller",
+    "parent": 0,
+    "children": [],
+    "nodeHeight": 1,
+    "manager": true,
+    "departmentEnum": "DEPARTMENT.SALES",
+    "developer": false,
+    "programmingLanguage": null
+  },
+  {
+    "id": 4,
+    "name": "Alex Kamal",
+    "parent": 2,
+    "children": [],
+    "nodeHeight": 2,
+    "manager": true,
+    "departmentEnum": "DEPARTMENT.IT",
+    "developer": true,
+    "programmingLanguage": "Python"
+  },
+  {
+    "id": 5,
+    "name": "Naomi Nagata",
+    "parent": 2,
+    "children": [],
+    "nodeHeight": 2,
+    "manager": false,
+    "departmentEnum": null,
+    "developer": true,
+    "programmingLanguage": "C#"
+  },
+  {
+    "id": 6,
+    "name": "Amos Burton",
+    "parent": 2,
+    "children": [
+      {
+        "id": 7
+      }
+    ],
+    "nodeHeight": 2,
+    "manager": false,
+    "departmentEnum": null,
+    "developer": true,
+    "programmingLanguage": "C#"
+  },
+  {
+    "id": 7,
+    "name": "Clarissa Mao",
+    "parent": 6,
+    "children": [],
+    "nodeHeight": 3,
+    "manager": false,
+    "departmentEnum": null,
+    "developer": true,
+    "programmingLanguage": "TypeScript"
+  }
+]
