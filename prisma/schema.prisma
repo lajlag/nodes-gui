@@ -1,0 +1,40 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model person {
+  id                      Int                   @id @default(autoincrement())
+  name                    String
+  parent_id               Int?
+  parent                  person?               @relation("ParentChildren", fields: [parent_id], references: [id])
+  children                person[]              @relation("ParentChildren")
+  node_height             Int
+  manager                 Boolean               @default(false)
+  developer               Boolean               @default(false)
+  department              DepartmentEnum?
+  programming_language_id Int?
+  programming_language    programming_language? @relation(fields: [programming_language_id], references: [id])
+}
+
+model programming_language {
+  id          Int      @id @default(autoincrement())
+  language    String
+  description String?
+  developers  person[]
+}
+
+enum DepartmentEnum {
+  HR
+  IT
+  SALES
+  MARKETING
+  FINANCE
+}
